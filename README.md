@@ -47,6 +47,19 @@ And behind the scenes:
 - [Anchor CLI](https://anchor.dev/docs)
 - [cloud-provider-kind](https://github.com/kubernetes-sigs/cloud-provider-kind)
 
+### Create an Anchor Account and Service (Critical Step)
+
+Before running the lab, you must create a service in the Anchor UI:
+
+1. Create a free account on [Anchor](https://anchor.dev/) if you haven’t already.
+2. Manually create a service named `kind-anchor-lab` in the Anchor dashboard. This service will be used by the local lab to request and manage TLS certificates.
+
+Here's how the service creation screen should look:
+
+![Creating new Service in Anchor UI](https://cdn.loncar.net/anchor-create-service.png)
+
+> Note: Anchor needs to know which service will be requesting certificates. The Kind Cloud Provider will handle the actual port mapping (typically :32769), so the port you choose in Anchor's UI is just for organization purposes.
+
 ## 🛠️ Setup & Usage
 
 ### Clone and enter the repo:
@@ -136,6 +149,11 @@ And thanks to Anchor, your certs are automatically:
 - Requested via ACME
 - Issued locally
 - Managed with cert-manager
+
+## ✅ TODO
+
+- [] Enhance automation (e.g., generate secrets.yaml from clipboard or .env)
+- [] Add a video walkthrough demo of the setup and usage
 
 ## 📜 License
 

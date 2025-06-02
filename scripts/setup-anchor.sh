@@ -11,8 +11,8 @@ else
   success "Anchor installed successfully!"
 fi
 
-info "Initializing Anchor..."
-anchor lcl
+info "⚠️ Run to initialize Anchor..."
+info "anchor lcl"
 
 info "⚠️ Now run:"
 info "anchor service env --org <ORG_NAME> --realm localhost --service kind-anchor-lab --env-output dotenv"
