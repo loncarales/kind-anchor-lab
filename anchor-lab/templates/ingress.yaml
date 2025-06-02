@@ -1,0 +1,32 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: {{ include "anchor-lab.fullname" . }}-ing
+  namespace: {{ .Release.Namespace }}
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /$1
+    cert-manager.io/issuer: {{ include "anchor-lab.fullname" . }}-internal
+spec:
+  ingressClassName: nginx
+  tls:
+  - hosts:
+    - {{ .Values.anchorServiceName }}.{{ .Values.domainName }}
+    secretName: {{ include "anchor-lab.fullname" . }}-kind-host-key
+  rules:
+  - host: {{ .Values.anchorServiceName }}.{{ .Values.domainName }}
+    http:
+      paths:
+      - path: /alice
+        pathType: Prefix
+        backend:
+          service:
+            name: {{ include "anchor-lab.fullname" . }}-alice-svc
+            port:
+              number: 8080
+      - path: /bob
+        pathType: Prefix
+        backend:
+          service:
+            name: {{ include "anchor-lab.fullname" . }}-bob-svc
+            port:
+              number: 8080

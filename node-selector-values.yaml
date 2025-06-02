@@ -1,0 +1,10 @@
+controller:
+  progressDeadlineSeconds: 600
+  nodeSelector:
+    kubernetes.io/hostname: dev-cluster-worker
+  admissionWebhooks:
+    patchWebhookJob:
+      kubernetes.io/hostname: dev-cluster-worker
+
+defaultBackend:
+  kubernetes.io/hostname: dev-cluster-worker

@@ -1,0 +1,15 @@
+apiVersion: cert-manager.io/v1
+kind: Issuer
+metadata:
+  name: {{ include "anchor-lab.fullname" . }}-internal
+  namespace: {{ .Release.Namespace }}
+spec:
+  acme:
+    server: {{ .Values.acme.server }}
+    privateKeySecretRef:
+      name: {{ include "anchor-lab.fullname" . }}-internal
+    externalAccountBinding:
+      keyID: {{ .Values.acme.keyId }}
+      keySecretRef:
+        name: {{ include "anchor-lab.fullname" . }}-key
+        key: acme-hmac-key

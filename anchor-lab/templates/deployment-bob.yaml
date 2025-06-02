@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "anchor-lab.fullname" . }}-bob
+  namespace: {{ .Release.Namespace }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: bob-app
+  template:
+    metadata:
+      name: bob-pod
+      labels:
+        app: bob-app
+    spec:
+      containers:
+      - name: bob-container
+        image: hashicorp/http-echo
+        args: ['-listen=:8080', '-text="hello from bob!"']
+        ports:
+        - containerPort: 8080

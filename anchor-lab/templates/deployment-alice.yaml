@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "anchor-lab.fullname" . }}-alice
+  namespace: {{ .Release.Namespace }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: alice-app
+  template:
+    metadata:
+      name: alice-pod
+      labels:
+        app: alice-app
+    spec:
+      containers:
+      - name: alice-container
+        image: hashicorp/http-echo
+        args: ['-listen=:8080', '-text="hello from alice!"']
+        ports:
+        - containerPort: 8080
