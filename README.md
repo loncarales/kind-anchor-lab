@@ -3,14 +3,14 @@
 ![Kubernetes](https://img.shields.io/badge/kubernetes-kind-blue)
 ![License](https://img.shields.io/badge/license-MIT-green.svg)
 
-A fully automated **local Kubernetes lab** that mirrors production infrastructure, with **HTTPS via TLS certificates** using [Anchor](https://anchor.dev) and [lcl.host](https://lcl.host).  
+A fully automated **local Kubernetes lab** that mimics production infrastructure, with **HTTPS via TLS certificates** using [Anchor](https://anchor.dev) and [lcl.host](https://lcl.host).  
 Ideal for developers aiming for **Dev/Prod parity**.
 
 ---
 
 ## 🧠 Why This Project?
 
-Local development environments often skip over encryption and ingress—critical parts of production setups. This project aims to close that gap:
+Local development environments often skip over encryption and ingress critical parts of production setups. This project aims to close that gap:
 
 - ✅ Run Kubernetes locally with [kind](https://kind.sigs.k8s.io/)
 - ✅ Simulate cloud LoadBalancers using [cloud-provider-kind](https://github.com/kubernetes-sigs/cloud-provider-kind)
