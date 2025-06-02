@@ -152,8 +152,8 @@ And thanks to Anchor, your certs are automatically:
 
 ## ✅ TODO
 
-- [] Enhance automation (e.g., generate secrets.yaml from clipboard or .env)
-- [] Add a video walkthrough demo of the setup and usage
+- [ ] Enhance automation (e.g., generate secrets.yaml from clipboard or .env)
+- [ ] Add a video walkthrough demo of the setup and usage
 
 ## 📜 License
 
