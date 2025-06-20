@@ -161,7 +161,7 @@ MIT - see [LICENSE](LICENSE)
 
 ## 📝 Blog Post
 
-Read the full background story and reasoning in the blog: [Achieving Dev/Prod Parity with Local Kubernetes and TLS](https://TBA.com)
+Read the full background story and reasoning in the blog: [Achieving Dev/Prod Parity with Local Kubernetes and TLS](https://loncar.net/posts/achieving-devprod-parity-with-local-kubernetes-and-tls-using-anchor-and-lclhost/)
 
 ## ❤️ Credits
 
